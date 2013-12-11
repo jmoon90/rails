@@ -15,9 +15,8 @@ class Commission < Employee
   end
 
   def display
-    puts "***#{@first_name} #{@last_name}***"
-    puts "Gross Salary: #{gross_pay}"
-    puts "Commission: #{commission}"
-    puts "Net Pay: #{net_pay.round(2)}\n"
+    updated_employee['gross_pay'] = gross_pay
+    updated_employee['net_pay'] = net_pay
+    updated_employee
   end
 end

@@ -4,20 +4,19 @@ class Quota < Employee
   end
 
   def commission
-    commission = Sales.new.employee_sales
+    comm = Sales.new.employee_sales
     if @last_name == "Wiggum"
-      commission['Wiggum'] > 80000 ? @value = 10000 : @value = 0
+      comm['Wiggum'] > 80000 ? @value = 10000 : @value = 0
     else
-      @value = 5000 if commission['Groundskeeper'] > 60000
+      @value = 5000 if comm['Groundskeeper'] > 60000
     end
     @value
   end
 
   def display
-    puts "***#{@first_name} #{@last_name}***"
-    puts "Gross Salary: #{gross_pay}"
-    puts "Commission: #{commission}"
-    puts "Net Pay: #{net_pay.round(2)}\n"
+    updated_employee['gross_pay'] = gross_pay
+    updated_employee['net_pay'] = net_pay
+    updated_employee
   end
 end
 

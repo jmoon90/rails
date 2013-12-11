@@ -8,11 +8,23 @@
     </tr>
     <% @employee_list.each do |employee| %>
     <tr>
-      <% binding.pry %>
-      <td> <%= employee.first_name %></td>
-      <td> <%= employee.last_name %></td>
-      <td> <%= employee.gross_pay %></td>
-      <td> <%= employee.net_pay %></td>
-    </tr>
+      <% if employee['pay_structure'] == 'owner' %>
+        <td><h3><mark><%= employee['first_name'] %></mark></h3></td>
+        <td><h3><mark><%= employee['last_name'] %></mark></h3></td>
+        <td><%= employee['gross_pay'] %></td>
+        <td><%= employee['net_pay'] %></td>
+      </tr>
+      <% elsif employee['pay_structure'] == 'commission' %>
+        <td><font color='green'><b><%= employee['first_name'] %></b></font></td>
+        <td><font color='green'><b><%= employee['last_name'] %></b></font></td>
+        <td><font color='green'><b><%= employee['gross_pay'] %></b></font></td>
+        <td><font color='green'><b><%= employee['net_pay'] %></b></font></style></td>
+      </tr>
+      <% else %>
+        <td><%= employee['first_name'] %></td>
+        <td><%= employee['last_name'] %></td>
+        <td><%= employee['gross_pay'] %></td>
+        <td><%= employee['net_pay'] %></td>
+      <% end %>
     <% end %>
   </table>

@@ -12,11 +12,11 @@ class Company
       pay_structure = row['pay_structure']
       employee = nil
       if pay_structure == "commission"
-        employee = Commission.new(row)
+        employee = Commission.new(row).display
       elsif pay_structure == "quota"
-        employee = Quota.new(row)
+        employee = Quota.new(row).display
       elsif pay_structure == "owner"
-        employee = Owner.new(row)
+        employee = Owner.new(row).display
       else
         employee = Employee.new(row).display
       end
