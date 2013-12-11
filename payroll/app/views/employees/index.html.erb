@@ -1,0 +1,18 @@
+<p>List your employees here</p>
+  <table>
+    <tr>
+      <th> First name </th>
+      <th> Last name </th>
+      <th> Gross pay </th>
+      <th> Net pay </th>
+    </tr>
+    <% @employee_list.each do |employee| %>
+    <tr>
+      <% binding.pry %>
+      <td> <%= employee.first_name %></td>
+      <td> <%= employee.last_name %></td>
+      <td> <%= employee.gross_pay %></td>
+      <td> <%= employee.net_pay %></td>
+    </tr>
+    <% end %>
+  </table>
