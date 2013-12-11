@@ -13,6 +13,7 @@ class Owner < Employee
   def display
     updated_employee['gross_pay'] = gross_pay
     updated_employee['net_pay'] = net_pay
+    updated_employee['commission_earned'] = @bonus
     updated_employee
   end
 end

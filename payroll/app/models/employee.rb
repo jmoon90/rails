@@ -1,7 +1,7 @@
 require 'csv'
 class Employee
   attr_reader :last_name, :first_name, :base_pay, :tax
-  attr_accessor :gross_pay, :net_pay, :updated_employee
+  attr_accessor :gross_pay, :net_pay, :updated_employee, :commission_earned
   def initialize(attributes)
     attributes = default.merge(attributes)
     @last_name = attributes['last_name']

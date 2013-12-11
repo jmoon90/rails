@@ -1,1 +1,25 @@
 <p>List your sales here</p>
+<% @sales.each do |employee| %>
+  <% if employee['pay_structure'] != 'salary' && employee['pay_structure'] != 'owner' %>
+    <table>
+      <tr align="center">
+        <th> First name </th>
+        <th> Last name </th>
+        <th> Title </th>
+        <th> Sales </th>
+        <th> Commission </th>
+      </tr>
+      <tr>
+        <td><%= employee['first_name'] %></td>
+        <td><%= employee['last_name'] %></td>
+        <td><%= employee['pay_structure'] %></td>
+        <td><%= employee['sales'] %></td>
+        <% if employee['first_name'] == "Ricky" %>
+          <td><mark><%= employee['commission_earned'] %></mark></td>
+        <% else %>
+          <td><%= employee['commission_earned'] %></td>
+        <% end %>
+      </td>
+  <% end %>
+  </table>
+<% end %>

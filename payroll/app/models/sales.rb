@@ -1,6 +1,6 @@
 require'csv'
 
-class Sales
+class Sales < Employee
   attr_reader :monthly_sales
 
   def initialize
@@ -33,5 +33,9 @@ class Sales
     sales_total['Wiggum'] = @wiggum
     sales_total['Groundskeeper'] = @groundskeeper
     sales_total
+  end
+
+  def display
+    employee_sales
   end
 end

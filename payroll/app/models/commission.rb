@@ -6,11 +6,13 @@ class Commission < Employee
   end
 
   def commission
-    commission = Sales.new.employee_sales
+    commission_list = Sales.new.display
     if @last_name == "Lob"
-      commission['Lob'] * 0.005
+      updated_employee['commission_earned'] = commission_list['Lob'] * 0.005
+    updated_employee['sales'] = commission_list['Lob']
     else
-      commission['Bobby'] * 0.015
+      updated_employee['commission_earned'] = commission_list['Bobby'] * 0.015
+    updated_employee['sales'] = commission_list['Bobby']
     end
   end
 

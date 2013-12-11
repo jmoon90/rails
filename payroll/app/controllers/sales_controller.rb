@@ -1,5 +1,5 @@
 class SalesController < ApplicationController
   def index
-    # make your sales objects available to the correlating view here
+    @sales = Company.new.get_employees
   end
 end
