@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Zoo::Application.load_tasks
+Postgresql::Application.load_tasks

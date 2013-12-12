@@ -16,7 +16,7 @@
         <td><%= employee['gross_pay'] %></td>
         <td><%= employee['net_pay'] %></td>
       </tr>
-      <% elsif employee['pay_structure'] == 'commission' %>
+      <% elsif employee['pay_structure'] == 'commission' || employee['pay_structure'] == 'quota' %>
         <td><font color='green'><b><%= employee['first_name'] %></b></font></td>
         <td><font color='green'><b><%= employee['last_name'] %></b></font></td>
         <td><%= employee['pay_structure'] %></td>

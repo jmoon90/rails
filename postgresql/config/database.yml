@@ -17,9 +17,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: Zoo_development
+  database: postgresql_development
   pool: 5
-  username: Zoo
+  username:
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -46,15 +46,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: Zoo_test
+  database: postgresql_test
   pool: 5
-  username: Zoo
+  username:
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: Zoo_production
+  database: postgresql_production
   pool: 5
-  username: Zoo
+  username:
   password:
